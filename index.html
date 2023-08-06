@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio Cajero</title>
+    <script defer src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+</head>
+
+<body id="miPagina" class="miPagina">
+    <header id="loginUsuario" class="container">
+        <div class="">
+            <label for="usuarios" id="labelUsuarios">Quién ingresa?</label>
+            <select name="usuarios" id="usuarios" class="form-select" aria-label="Default select example">
+            </select>
+            <br>
+            <label for="claveUsuario">Su clave:</label>
+            <input class="form-control" type="password" name="claveUsuario" id="claveUsuario" min="4" max="4">
+        </div>
+        <br>
+        <div>
+            <input class="ov-btn-slide" type="button" id="btnIngresarLogin" value="Ingresar" onclick="Login()">
+            <input class="ov-btn-slide" type="button" id="btnCancelarLogin" value="Cancelar" onclick="inicio()">
+        </div>
+    </header>
+    <section id="datosUsuario" class="container">
+        <article id="consultaSaldo">
+            <div id="saldoUsuario">
+            </div>
+            <div id="ultimaTransaccion">
+
+            </div>
+        </article>
+        <article id="articuloTransaccion">
+            <div>
+                <p>Qué transacción desea realizar?</p>
+                <input type="button" id="btnConsignar" value="Consignar" onclick="mostrarConsignar()"
+                    class="ov-btn-slide">
+                <input type="button" id="btnRetirar" value="Retirar" onclick="mostrarRetirar()" class="ov-btn-slide">
+            </div>
+            <div>
+                <p> </p><input type="button" class="ov-btn-slide" id="btnFinSesion" value="Finalizar Sesión"
+                    onclick="inicio()"></p>
+            </div>
+        </article>
+    </section>
+    <section id="seccionConsignar" class="container">
+        <div>
+            <label for="txtConsignar">Valor a consignar</label>
+            <input class="form-control" type="number" name="txtConsignar" id="txtConsignar">
+            <input class="ov-btn-slide" type="button" id="btnAceptaConsignar" value="Aceptar" onclick="Consignar()"
+                class="ov-btn-slide">
+            <input class="ov-btn-slide" type="button" id="btnCancelaConsignar" value="Cancelar"
+                onclick="cancelarConsignar()" class="ov-btn-slide">
+        </div>
+    </section>
+    <section id="seccionRetirar" class="container">
+        <label for="txtRetirar">Valor a retirar</label>
+        <input class="form-control" type="number" name="txtRetirar" id="txtRetirar">
+        <input class="ov-btn-slide" type="button" id="btnAceptaRetirar" value="Aceptar" onclick="Retirar()">
+        <input class="ov-btn-slide" type="button" id="btnCancelaRetirar" value="Cancelar" onclick="cancelarRetirar()">
+    </section>
+    <div id="mensajeError" class="container"></div>
+    <section id="datosOcultos">
+        <input type="" id="usuarioSesion">
+    </section>
+</body>
+
+</html>
